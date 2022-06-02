@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+
+}
+
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+main {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.todo-item {
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.todo-button{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(0, 140, 255);
+    border: none;
+    color: white;
+
+
+
+}
+
+.todo-input {
+    width: 428px;
+    height: 30px;
+}
+
+.trash-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    background-color: red;
+    border: none;
+} 
+
+.todo-filter {
+    margin: 10px;
+}
+
+button {
+    padding: 3px;
+}
+
