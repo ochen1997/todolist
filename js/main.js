@@ -9,18 +9,29 @@ document.querySelector("#activeFilter").onclick = applyFilter;
 document.querySelector("#allFilter").onclick = applyFilter;
 
 function addTodo(event) {
-    event.preventDefault();
+    event.preventDefault()
+
+    const text = todoInput.value;
+    if(text === ""){
+        return
+    }
+    
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo")
+
     const checkBox = document.createElement("input");
     checkBox.classList.add("checkbox");
     checkBox.type = "checkbox"
     todoDiv.appendChild(checkBox)
 
     const newTodo = document.createElement('li');
-    newTodo.innerHTML = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
+
+    const paragraph = document.createElement("p")
+    paragraph.classList.add("paragraph")
+    paragraph.textContent = text;
+    todoDiv.appendChild(paragraph)
 
     const trashButton = document.createElement('button');
     trashButton.innerHTML = 'x';
@@ -29,11 +40,6 @@ function addTodo(event) {
     todoList.appendChild(todoDiv)
 
     todoInput.value = '';
-    todoList.addEventListener("change", function(event){
-        if(event.target.tagName === "INPUT" && event.target.type === "checkbox"){
-            toggleComplete(event.target);
-        }
-    })
 
 
 }
@@ -48,10 +54,6 @@ function trashcheck (event) {
 
 }
 
-function toggleComplete(inputElement){
-    if(inputElement.checked === false){
-        inputElement.parentElement.classList.remove("complete");
-    } else {
-        inputElement.parentElement.classList.add("completed")
-    }
-}
+
+
+
